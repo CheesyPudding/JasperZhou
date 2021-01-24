@@ -115,7 +115,7 @@ section .title::after{
     color: #fff;
     font-size: 18px;
     font-weight: 500;
-    margin-left: 150px;
+    margin-left: 140px;
     transition: color 0.3s ease;
 }
 .navbar .menu li a:hover{
@@ -173,7 +173,7 @@ section .title::after{
     font-family: 'Ubuntu', sans-serif;
 }
 .home .max-width{
-    margin: auto 0 auto 30px;
+    margin: auto 0 auto 30%;
 }
 .home .text-1{
     font-size: 27px;
@@ -185,7 +185,7 @@ section .title::after{
 }
 .home .text-3{
     font-size: 40px;
-    margin: 5px 0;
+    margin: 5px 0px;
 }
 .home .text-3 span{
     color: rgb(0, 124, 126);
@@ -212,10 +212,23 @@ section .title::after{
 .about .title::after{
     content: "who I am";
 }
-.about .max-width i{
-    margin: 30px 15%;
+.about .handles{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+.about .max-width a{
+    margin: 20px 10%;
+    color: inherit;
+}
+.about .max-width i:hover{
+    transform: scale(1.10);
+    color: darkturquoise;
 }
 /* skills section styling */
+.skills {
+    margin-bottom: 25px;
+}
 .skills .max-width .title::after{
     content: "what I know";
 }
@@ -276,11 +289,11 @@ section .title::after{
 }
 
 /* projects section styling */
-.projects, .works{
+.projects{
     color:#fff;
     background: linear-gradient(rgba(0, 0, 0, 255), rgba(0, 0, 0, 0)), url('images/background.jpg');
     height: 100vh;
-    min-height: 800px;
+    min-height: 900px;
     background-size: 100%;
     background-size: cover;
     background-attachment: fixed;
@@ -297,7 +310,7 @@ section .title::after{
 }
 .projects .projects-content .card{
     width: 48%;
-    height: 300px;
+    height: 20vw;
     float: left;
     text-align: center;
     margin: 1% 1%;
@@ -327,11 +340,17 @@ section .title::after{
     background-size: 100%;
     background-attachment: local;
 }
+.projects .projects-content .card p, .projects .projects-content .card div{
+    opacity: 0;
+}
 .projects .projects-content .card .box{
     transition: all 0.3s ease;
 }
 .projects .projects-content .card:hover{
     transform: scale(1.05);
+}
+.projects .projects-content .card:hover p, .projects .projects-content .card:hover div{
+    opacity: 1;
 }
 .projects .projects-content .card .text{
     font-size: 25px;
@@ -340,6 +359,16 @@ section .title::after{
 }
 
 /* works section styling */
+.works{
+    float: clear;
+    color:#fff;
+    background: linear-gradient(rgba(0, 0, 0, 255), rgba(0, 0, 0, 0)), url('images/background.jpg');
+    height: 100vh;
+    min-height: 800px;
+    background-size: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+}
 .works .title::after{
     background: linear-gradient(rgba(0, 0, 0, 255), rgba(0, 0, 0, 0)), url('images/background.jpg');
     background-size: 100%;
@@ -365,7 +394,6 @@ section .title::after{
 .works .max-width .carousel #card4{
     background: url('images/works4.gif');
     background-size: 100%;
-    background-attachment: local;
 }
 .works .max-width .carousel #card5{
     background: url('images/works5.gif');
@@ -379,10 +407,16 @@ section .title::after{
     transition: all 0.3s ease;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
     height: 350px;
-    width: 350px;
-    margin: 0px 15px;
+    width: 100%;
+    margin: 0px 1%;
 }
-
+.works .max-width .carousel {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
 .works .carousel .card:hover .box{
     transform: scale(1.05);
 }
@@ -425,11 +459,14 @@ section .title::after{
     font-weight: 600;
     margin-bottom: 10px;
 }
-.contact .contact-content .left p{
+.contact .contact-content p{
     text-align: justify;
 }
 .contact .contact-content .left .icons{
     margin: 10px 0;
+}
+.contact .contact-content .icons{
+    margin: auto;
 }
 .contact .contact-content .row{
     display: flex;
@@ -441,6 +478,10 @@ section .title::after{
 }
 .contact .contact-content .row i{
     font-size: 25px;
+    color: black;
+}
+.contact .contact-content .row i:hover{
+    transform: scale(1.10);
     color: darkturquoise;
 }
 .contact .contact-content .info .head{
@@ -448,66 +489,6 @@ section .title::after{
 }
 .contact .contact-content .info .sub-title{
     color: #333;
-}
-.contact .right form .fields{
-    display: flex;
-}
-.contact .right form .field,
-.contact .right form .fields .field{
-    height: 45px;
-    width: 100%;
-    margin-bottom: 15px;
-}
-.contact .right form .textarea{
-    height: 80px;
-    width: 100%;
-}
-.contact .right form .name{
-    margin-right: 10px;
-}
-.contact .right form .email{
-    margin-left: 10px;  
-}
-.contact .right form .field input,
-.contact .right form .textarea textarea{
-    height: 100%;
-    width: 100%;
-    border: 1px solid lightgrey;
-    border-radius: 6px;
-    outline: none;
-    padding: 0 15px;
-    font-size: 17px;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s ease;
-}
-.contact .right form .field input:focus,
-.contact .right form .textarea textarea:focus{
-    border-color: #b3b3b3;
-}
-.contact .right form .textarea textarea{
-    padding-top: 10px;
-    resize: none;
-}
-.contact .right form .button{
-    height: 47px;
-    width: 170px;
-}
-.contact .right form .button button{
-    width: 100%;
-    height: 100%;
-    border: 2px solid darkturquoise;
-    background: darkturquoise;
-    color: #fff;
-    outline: none;
-    font-size: 20px;
-    font-weight: 500;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.contact .right form .button button:hover{
-    color: darkturquoise;
-    background: none;
 }
 
 /* footer section styling */
@@ -525,7 +506,6 @@ footer span a:hover{
     text-decoration: underline;
 }
 
-
 /* responsive media query start */
 @media (max-width: 1300px) {
     .home .max-width{
@@ -533,16 +513,39 @@ footer span a:hover{
     }
 }
 
-@media (max-width: 1104px) {
-    .about .max-width{
-        height: 500px;
-        width: 500px;
+@media (max-width: 1175px) {
+    .navbar .menu li a{
+        display: block;
+        font-size: 18px;
+        margin-left: 120px;
+    }
+    .projects .projects-content .card{
+        height: 25vw;
+    }
+}
+
+@media (max-width: 1075px) {
+    .navbar .menu li a{
+        display: block;
+        font-size: 18px;
+        margin-left: 100px;
+    }
+    .projects .projects-content .card{
+        height: 30vw;
     }
 }
 
 @media (max-width: 991px) {
     .max-width{
         padding: 0 50px;
+    }
+    .navbar .menu li a{
+        display: block;
+        font-size: 17px;
+        margin-left: 80px;
+    }
+    .projects .projects-content .card{
+        height: 33vw;
     }
 }
 @media (max-width: 947px){
@@ -571,9 +574,9 @@ footer span a:hover{
         display: block;
     }
     .navbar .menu li a{
-        display: inline-block;
-        margin: 20px 0;
-        font-size: 25px;
+        display: block;
+        font-size: 17px;
+        margin-left: 80px;
     }
     .home .max-width .text-2{
         font-size: 70px;
@@ -581,19 +584,12 @@ footer span a:hover{
     .home .max-width .text-3{
         font-size: 35px;
     }
-    .home .max-width a{
-        font-size: 23px;
-        padding: 10px 30px;
-    }
     .max-width{
         max-width: 930px;
     }
-
     .projects .max-width .card{
-        width: calc(50% - 10px);
-        margin-bottom: 20px;
+        height: 33vw;
     }
-
     .contact .contact-content .column{
         width: 100%;
         margin-bottom: 35px;
@@ -615,6 +611,12 @@ footer span a:hover{
     }
     .projects .max-width .card{
         width: 100%;
+    }
+    .projects .projects-content .card{
+        height: 60vw;
+    }
+    .works {
+        min-height: 1600px;
     }
 }
 
@@ -643,6 +645,12 @@ footer span a:hover{
         width: 35px;
         font-size: 23px;
         line-height: 38px;
+    }
+    .projects .projects-content .card{
+        height: 55vw;
+    }
+    .works {
+        min-height: 1000px;
     }
 }
 
