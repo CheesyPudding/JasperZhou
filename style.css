@@ -378,27 +378,21 @@ section .title::after{
 }
 .works .max-width .carousel #card1{
     background: url('images/works1.gif');
-    background-size: 100%;
+    background-size: 380px 200px;
     background-attachment: local;
+    object-fit: cover;
 }
 .works .max-width .carousel #card2{
     background: url('images/works2.gif');
-    background-size: 100%;
+    background-size: 400px 350px;
     background-attachment: local;
+    object-fit: cover;
 }
 .works .max-width .carousel #card3{
     background: url('images/works3.gif');
-    background-size: 100%;
+    background-size: 375px 315px;
     background-attachment: local;
-}
-.works .max-width .carousel #card4{
-    background: url('images/works4.gif');
-    background-size: 100%;
-}
-.works .max-width .carousel #card5{
-    background: url('images/works5.gif');
-    background-size: 100%;
-    background-attachment: local;
+    object-fit: cover;
 }
 .works .max-width .carousel .card{
     border-radius: 6px;
