@@ -308,6 +308,9 @@ section .title::after{
     background-attachment: fixed;
     content: "what I've done";
 }
+.project .projects-content{
+    color: white;
+}
 .projects .projects-content .card{
     width: 48%;
     height: 20vw;
@@ -351,6 +354,7 @@ section .title::after{
 }
 .projects .projects-content .card:hover p, .projects .projects-content .card:hover div{
     opacity: 1;
+    color: white;
 }
 .projects .projects-content .card .text{
     font-size: 25px;
