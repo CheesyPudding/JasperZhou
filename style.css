@@ -164,7 +164,7 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 255)), url('images/background.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 255)), url('images/background.gif');
     height: 100vh;
     min-height: 500px;
     background-size: 100%;
@@ -383,21 +383,21 @@ section .title::after{
 .works .max-width .carousel #card1{
     background: url('images/works1.gif');
     background-size: 380px 200px;
-    background-attachment: local;
-    object-fit: cover;
 }
 .works .max-width .carousel #card2{
     background: url('images/works2.gif');
     background-size: 400px 350px;
-    background-attachment: local;
-    object-fit: cover;
 }
 .works .max-width .carousel #card3{
     background: url('images/works3.gif');
     background-size: 375px 315px;
-    background-attachment: local;
-    object-fit: cover;
 }
+
+.works .max-width .carousel #card4{
+    background: url('images/background.gif');
+    background-size: 375px 375px;
+}
+
 .works .max-width .carousel .card{
     border-radius: 6px;
     padding: 25px 35px;
@@ -407,6 +407,8 @@ section .title::after{
     height: 350px;
     width: 100%;
     margin: 0px 1%;
+    background-attachment: local;
+    object-fit: cover;
 }
 .works .max-width .carousel {
     display: flex;
