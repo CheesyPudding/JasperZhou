@@ -18,7 +18,7 @@ html{
 }
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
-}
+}.projects
 ::-webkit-scrollbar-thumb {
     background: #888;
 }
@@ -263,29 +263,55 @@ section .title::after{
     animation: progressBar90 3s ease-in-out;
     animation-fill-mode:both; 
 }
-.skills .max-width .html::before{
-    animation: progressBar70 3s 2s ease-in-out;
-    animation-fill-mode:both; 
-}
-.skills .max-width .css::before{
-    animation: progressBar70 3s 4s ease-in-out;
+.skills .max-width .csharp:before{
+    animation: progressBar85 3s 2s ease-in-out;
     animation-fill-mode:both; 
 }
 .skills .max-width .js::before{
-    animation: progressBar60 3s 6s ease-in-out;
+    animation: progressBar80 3s 4s ease-in-out;
     animation-fill-mode:both; 
 }
+.skills .max-width .html::before{
+    animation: progressBar70 3s 6s ease-in-out;
+    animation-fill-mode:both; 
+}
+.skills .max-width .css::before{
+    animation: progressBar70 3s 8s ease-in-out;
+    animation-fill-mode:both; 
+}
+.skills .max-width .java::before{
+    animation: progressBar50 3s 10s ease-in-out;
+    animation-fill-mode:both; 
+}
+.skills .max-width .c::before{
+    animation: progressBar40 3s 12s ease-in-out;
+    animation-fill-mode:both; 
+}
+
+
 @keyframes progressBar90 {
     0% { width: 0; }
     100% { width: 90%; }
+}
+@keyframes progressBar85 {
+    0% { width: 0; }
+    100% { width: 85%; }
+}
+@keyframes progressBar80 {
+    0% { width: 0; }
+    100% { width: 80%; }
 }
 @keyframes progressBar70 {
     0% { width: 0; }
     100% { width: 70%; }
 }
-@keyframes progressBar60 {
+@keyframes progressBar50 {
     0% { width: 0; }
-    100% { width: 60%; }
+    100% { width: 50%; }
+}
+@keyframes progressBar40 {
+    0% { width: 0; }
+    100% { width: 40%; }
 }
 
 /* projects section styling */
@@ -293,7 +319,7 @@ section .title::after{
     color:#fff;
     background: linear-gradient(rgba(0, 0, 0, 255), rgba(0, 0, 0, 0)), url('images/background.jpg');
     height: 100vh;
-    min-height: 900px;
+    min-height: 1850px;
     background-size: 100%;
     background-size: cover;
     background-attachment: fixed;
@@ -324,7 +350,7 @@ section .title::after{
     box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
 }
 .projects .projects-content #card1{
-    background-image: url('images/project1.PNG');
+    background-image: url('images/frogger.gif');
     background-size: 100%;
     background-attachment: local;
 }
@@ -339,7 +365,25 @@ section .title::after{
     background-attachment: local;
 }
 .projects .projects-content #card4{
-    background-image: url('images/project4.PNG');
+    background-image: url('images/plantifind.gif');
+    background-size: 100%;
+    background-attachment: local;
+}
+.projects .projects-content #card4 *{
+    color: black;
+}
+.projects .projects-content #card5{
+    background-image: url('images/uxwashere50.PNG');
+    background-size: 100%;
+    background-attachment: local;
+}
+.projects .projects-content #card6{
+    background-image: url('images/aiguise.gif');
+    background-size: 100%;
+    background-attachment: local;
+}
+.projects .projects-content #card7{
+    background-image: url('images/pugna.PNG');
     background-size: 100%;
     background-attachment: local;
 }
@@ -368,7 +412,6 @@ section .title::after{
     color:#fff;
     background: linear-gradient(rgba(0, 0, 0, 255), rgba(0, 0, 0, 0)), url('images/background.jpg');
     height: 100vh;
-    min-height: 800px;
     background-size: 100%;
     background-size: cover;
     background-attachment: fixed;
@@ -507,9 +550,18 @@ footer span a:hover{
 }
 
 /* responsive media query start */
+@media (max-width: 1500px) {
+    .projects .projects-content .card{
+        height: 25vw;
+    }
+}
+
 @media (max-width: 1300px) {
     .home .max-width{
         margin-left: 0px;
+    }
+    .projects .projects-content .card{
+        height: 30vw;
     }
 }
 
@@ -520,7 +572,7 @@ footer span a:hover{
         margin-left: 120px;
     }
     .projects .projects-content .card{
-        height: 25vw;
+        height: 33vw;
     }
 }
 
@@ -531,7 +583,7 @@ footer span a:hover{
         margin-left: 100px;
     }
     .projects .projects-content .card{
-        height: 30vw;
+        height: 36vw;
     }
 }
 
@@ -545,8 +597,9 @@ footer span a:hover{
         margin-left: 80px;
     }
     .projects .projects-content .card{
-        height: 33vw;
+        height: 39vw;
     }
+
 }
 @media (max-width: 947px){
     .menu-btn{
@@ -588,7 +641,7 @@ footer span a:hover{
         max-width: 930px;
     }
     .projects .max-width .card{
-        height: 33vw;
+        height: 38vw;
     }
     .contact .contact-content .column{
         width: 100%;
@@ -596,7 +649,13 @@ footer span a:hover{
     }
 }
 
-@media (max-width: 690px) {
+@media (max-width: 850px) {
+    .projects .max-width .card{
+        height: 45vw;
+    }
+}
+
+@media (max-width: 725px) {
     .max-width{
         padding: 0 23px;
     }
@@ -616,7 +675,7 @@ footer span a:hover{
         height: 60vw;
     }
     .works {
-        min-height: 1600px;
+        min-height: 2000px;
     }
 }
 
@@ -649,6 +708,10 @@ footer span a:hover{
     .projects .projects-content .card{
         height: 55vw;
     }
+    .projects{
+        height: 1000px;
+    }
+
     .works {
         min-height: 1000px;
     }
