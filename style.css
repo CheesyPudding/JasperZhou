@@ -288,6 +288,11 @@ section .title::after{
     animation-fill-mode:both; 
 }
 
+.skills .max-width .swift::before{
+    animation: progressBar60 3s 12s ease-in-out;
+    animation-fill-mode:both; 
+}
+
 
 @keyframes progressBar90 {
     0% { width: 0; }
@@ -305,6 +310,10 @@ section .title::after{
     0% { width: 0; }
     100% { width: 70%; }
 }
+@keyframes progressBar60 {
+    0% { width: 0; }
+    100% { width: 60%; }
+}
 @keyframes progressBar50 {
     0% { width: 0; }
     100% { width: 50%; }
@@ -319,7 +328,7 @@ section .title::after{
     color:#fff;
     background: linear-gradient(rgba(0, 0, 0, 255), rgba(0, 0, 0, 0)), url('images/background.jpg');
     height: 100vh;
-    min-height: 1850px;
+    min-height: 2350px;
     background-size: 100%;
     background-size: cover;
     background-attachment: fixed;
@@ -386,6 +395,19 @@ section .title::after{
     background-image: url('images/pugna.PNG');
     background-size: 100%;
     background-attachment: local;
+}
+.projects .projects-content #card8{
+    background-image: url('images/pd.gif');
+    background-size: 100%;
+    background-attachment: local;
+}
+.projects .projects-content #card9{
+    background-image: url('images/hakuna.gif');
+    background-size: 100%;
+    background-attachment: local;
+}
+.projects .projects-content #card9 *{
+    color: black;
 }
 .projects .projects-content .card p, .projects .projects-content .card div{
     opacity: 0;
