@@ -279,20 +279,18 @@ section .title::after{
     animation: progressBar70 3s 8s ease-in-out;
     animation-fill-mode:both; 
 }
+.skills .max-width .swift::before{
+    animation: progressBar60 3s 10s ease-in-out;
+    animation-fill-mode:both; 
+}
 .skills .max-width .java::before{
-    animation: progressBar50 3s 10s ease-in-out;
+    animation: progressBar50 3s 12s ease-in-out;
     animation-fill-mode:both; 
 }
 .skills .max-width .c::before{
-    animation: progressBar40 3s 12s ease-in-out;
+    animation: progressBar40 3s 14s ease-in-out;
     animation-fill-mode:both; 
 }
-
-.skills .max-width .swift::before{
-    animation: progressBar60 3s 12s ease-in-out;
-    animation-fill-mode:both; 
-}
-
 
 @keyframes progressBar90 {
     0% { width: 0; }
