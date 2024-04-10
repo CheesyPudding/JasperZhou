@@ -327,8 +327,7 @@ section .title::after{
 .projects{
     color:#fff;
     background: linear-gradient(rgba(0, 0, 0, 255), rgba(0, 0, 0, 0)), url('images/background.jpg');
-    height: 100vh;
-    min-height: 2350px;
+    height: max-content;
     background-size: 100%;
     background-size: cover;
     background-attachment: fixed;
@@ -343,74 +342,96 @@ section .title::after{
     background-attachment: fixed;
     content: "what I've done";
 }
-.project .projects-content{
+.projects-content{
     color: white;
+    height: max-content;
+    display: inline-block;
 }
 .projects .projects-content .card{
     width: 48%;
     height: 20vw;
+    min-height: max-content;
     float: left;
     text-align: center;
     margin: 1% 1%;
     border-radius: 6px;
-    padding: 20px 25px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    display: flex;
+}
+.projects .projects-content .card .box{
+    padding: 20px 25px;
+    border-radius: 6px;
+    min-height: max-content;
+    width: 100%;
 }
 .projects .projects-content #card1{
     background-image: url('images/frogger.gif');
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
     background-attachment: local;
+    background-repeat: no-repeat;
 }
 .projects .projects-content #card2{
     background-image: url('images/project2.PNG');
-    background-size: 100%;
+    background-size: cover;
+    background-position: left;
     background-attachment: local;
+    background-repeat: no-repeat;
 }
 .projects .projects-content #card3{
     background-image: url('images/project3.PNG');
-    background-size: 100%;
+    background-size: cover;
+    background-position: left;
     background-attachment: local;
+    background-repeat: no-repeat;
 }
 .projects .projects-content #card4{
     background-image: url('images/plantifind.gif');
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
     background-attachment: local;
-}
-.projects .projects-content #card4 *{
-    color: black;
+    background-repeat: no-repeat;
 }
 .projects .projects-content #card5{
     background-image: url('images/uxwashere50.PNG');
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
     background-attachment: local;
+    background-repeat: no-repeat;
 }
 .projects .projects-content #card6{
     background-image: url('images/aiguise.gif');
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
     background-attachment: local;
+    background-repeat: no-repeat;
 }
 .projects .projects-content #card7{
     background-image: url('images/pugna.PNG');
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
     background-attachment: local;
+    background-repeat: no-repeat;
 }
 .projects .projects-content #card8{
     background-image: url('images/pd.gif');
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
     background-attachment: local;
+    background-repeat: no-repeat;
 }
 .projects .projects-content #card9{
     background-image: url('images/hakuna.gif');
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
     background-attachment: local;
+    background-repeat: no-repeat;
 }
-.projects .projects-content #card9 *{
-    color: black;
-}
-.projects .projects-content .card p, .projects .projects-content .card div{
+.projects .projects-content .card p, .projects .projects-content .card .box, .projects .projects-content .card .box a{
     opacity: 0;
+    color: white;
 }
 .projects .projects-content .card .box{
     transition: all 0.3s ease;
@@ -418,9 +439,12 @@ section .title::after{
 .projects .projects-content .card:hover{
     transform: scale(1.05);
 }
-.projects .projects-content .card:hover p, .projects .projects-content .card:hover div{
+.projects .projects-content .card:hover .box {
+    background: rgba(0, 0, 0, .5);
     opacity: 1;
-    color: white;
+}
+.projects .projects-content .card:hover .box a, .projects .projects-content .card:hover .box p{
+    opacity: 1;
 }
 .projects .projects-content .card .text{
     font-size: 25px;
@@ -433,7 +457,7 @@ section .title::after{
     float: clear;
     color:#fff;
     background: linear-gradient(rgba(0, 0, 0, 255), rgba(0, 0, 0, 0)), url('images/background.jpg');
-    height: 100vh;
+    height: max-content;
     background-size: 100%;
     background-size: cover;
     background-attachment: fixed;
@@ -694,10 +718,9 @@ footer span a:hover{
         width: 100%;
     }
     .projects .projects-content .card{
-        height: 60vw;
+        height: 65vw;
     }
     .works {
-        min-height: 2000px;
     }
 }
 
@@ -711,6 +734,9 @@ footer span a:hover{
     .about .max-width .text,
     .skills .max-width .left .text{
         font-size: 19px;
+    }
+    .text{
+        font-size: 10px;
     }
     .contact .right form .fields{
         flex-direction: column;
@@ -728,14 +754,12 @@ footer span a:hover{
         line-height: 38px;
     }
     .projects .projects-content .card{
-        height: 55vw;
+        height: 75vw;
+        min-height: max-content;
     }
     .projects{
-        height: 1000px;
     }
-
     .works {
-        min-height: 1000px;
     }
 }
 
