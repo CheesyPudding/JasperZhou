@@ -470,19 +470,47 @@ section .title::after{
 .works .max-width .carousel #card1{
     background: url('images/works1.gif');
     background-size: 380px 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .works .max-width .carousel #card2{
     background: url('images/works2.gif');
     background-size: 400px 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .works .max-width .carousel #card3{
     background: url('images/works3.gif');
     background-size: 375px 315px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .works .max-width .carousel #card4{
     background: url('images/background.gif');
     background-size: 375px 375px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.works .max-width .carousel #card5{
+    background: url('images/dog.gif');
+    background-size: 375px 375px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.works .max-width .carousel #card6{
+    background: url('images/bear.gif');
+    background-size: 375px 375px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .works .max-width .carousel .card{
