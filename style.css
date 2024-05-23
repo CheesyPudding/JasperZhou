@@ -479,9 +479,6 @@ section .title::after{
 .works .max-width .carousel #card1{
     background: url('images/works1.gif');
     background-size: 380px 200px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 .works .max-width .carousel #card2{
     background: url('images/works2.gif');
@@ -522,6 +519,14 @@ section .title::after{
     background-repeat: no-repeat;
 }
 
+.works .max-width .carousel #card7{
+    background: url('images/snacc.gif');
+    background-size: 375px 375px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .works .max-width .carousel .card{
     border-radius: 6px;
     padding: 25px 35px;
@@ -533,6 +538,7 @@ section .title::after{
     margin: 0px 1%;
     background-attachment: local;
     object-fit: cover;
+    
 }
 .works .max-width .carousel {
     display: flex;
