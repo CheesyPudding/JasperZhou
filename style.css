@@ -427,6 +427,13 @@ section .title::after{
     background-attachment: local;
     background-repeat: no-repeat;
 }
+.projects .projects-content #card10{
+    background-image: url('images/snactuary.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: local;
+    background-repeat: no-repeat;
+}
 
 .projects .projects-content #card0{
     background-image: url('images/h_att.gif');
