@@ -483,34 +483,22 @@ section .title::after{
     background-attachment: fixed;
     content: "when I'm bored";
 }
+
 .works .max-width .carousel #card1{
-    background: url('images/works1.gif');
-    background-size: 380px 200px;
+    background: url('images/vivariums.gif');
+    background-size: 450px 375px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 .works .max-width .carousel #card2{
-    background: url('images/works2.gif');
-    background-size: 400px 350px;
-    background-size: cover;
+    background: url('images/battleghoti.gif');
+    background-size: 450px 375px;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 .works .max-width .carousel #card3{
-    background: url('images/works3.gif');
-    background-size: 375px 315px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.works .max-width .carousel #card4{
-    background: url('images/background.gif');
-    background-size: 375px 375px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.works .max-width .carousel #card5{
     background: url('images/dog.gif');
     background-size: 375px 375px;
     background-size: cover;
@@ -518,7 +506,7 @@ section .title::after{
     background-repeat: no-repeat;
 }
 
-.works .max-width .carousel #card6{
+.works .max-width .carousel #card4{
     background: url('images/bear.gif');
     background-size: 375px 375px;
     background-size: cover;
@@ -526,9 +514,24 @@ section .title::after{
     background-repeat: no-repeat;
 }
 
-.works .max-width .carousel #card7{
+.works .max-width .carousel #card5{
     background: url('images/snacc.gif');
     background-size: 375px 375px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.works .max-width .carousel #card6{
+    background: url('images/works2.gif');
+    background-size: 400px 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.works .max-width .carousel #card7{
+    background: url('images/works3.gif');
+    background-size: 375px 315px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
