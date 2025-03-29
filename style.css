@@ -435,6 +435,14 @@ section .title::after{
     background-repeat: no-repeat;
 }
 
+.projects .projects-content #card11{
+    background-image: url('images/battleghoti.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: local;
+    background-repeat: no-repeat;
+}
+
 .projects .projects-content #card0{
     background-image: url('images/h_att.gif');
     background-size: cover;
@@ -486,13 +494,6 @@ section .title::after{
 
 .works .max-width .carousel #card1{
     background: url('images/vivariums.gif');
-    background-size: 450px 375px;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.works .max-width .carousel #card2{
-    background: url('images/battleghoti.gif');
     background-size: 450px 375px;
     background-position: center;
     background-repeat: no-repeat;
