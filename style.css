@@ -320,7 +320,7 @@ section .title::after{
 }
 .projects .title::after{
     background-color: transparent;
-    content: "what I've done in software & game dev";
+    content: "what I've done";
 }
 .projects-content{
     color: white;
