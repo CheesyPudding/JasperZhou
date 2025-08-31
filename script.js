@@ -35,7 +35,7 @@ $(document).ready(function(){
 
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["Full Stack Developer", "Coder", "Designer", "Animator", "Artist", "Student", "Gamer", "Human-Being"],
+        strings: ["Software Dev", "Game Dev", "3D Animator", "Designer", "2D Animator", "Student", "Gamer", "Human-Being"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
@@ -45,7 +45,7 @@ $(document).ready(function(){
     $('.carousel').owlCarousel({
         margin: 20,
         loop: true,
-        autoplayTimeOut: 2000,
+        autoplayTimeout: 2000,
         autoplayHoverPause: true,
         responsive: {
             0:{
@@ -62,4 +62,88 @@ $(document).ready(function(){
             }
         }
     });
+
+    const menuBtn = document.querySelector('.menu-btn');
+    const menu = document.querySelector('.menu');
+
+    menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    menuBtn.classList.toggle('active');
+    });
+
+    // Lightbox functionality
+    // Select all card images
+const cards = document.querySelectorAll('.card img');
+
+cards.forEach(img => {
+    let isDragging = false;
+    let startX, startY;
+
+    // --- Desktop mouse events ---
+    img.addEventListener('mousedown', e => {
+        isDragging = false;
+        startX = e.clientX;
+        startY = e.clientY;
+    });
+
+    img.addEventListener('mousemove', e => {
+        if(Math.abs(e.clientX - startX) > 5 || Math.abs(e.clientY - startY) > 5){
+            isDragging = true;
+        }
+    });
+
+    img.addEventListener('mouseup', e => {
+        if(!isDragging){
+            openLightbox(img.dataset.full || img.src);
+        }
+    });
+
+    // --- Touch events for mobile ---
+    img.addEventListener('touchstart', e => {
+        isDragging = false;
+        const touch = e.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+    });
+
+    img.addEventListener('touchmove', e => {
+        const touch = e.touches[0];
+        if(Math.abs(touch.clientX - startX) > 5 || Math.abs(touch.clientY - startY) > 5){
+            isDragging = true;
+        }
+    });
+
+    img.addEventListener('touchend', e => {
+        if(!isDragging){
+            openLightbox(img.dataset.full || img.src);
+        }
+    });
+});
+
+// Lightbox function example
+function openLightbox(src){
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = 0;
+    overlay.style.left = 0;
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.background = 'rgba(0,0,0,0.8)';
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.zIndex = 10000;
+    overlay.addEventListener('click', () => overlay.remove());
+
+    // Create image
+    const fullImg = document.createElement('img');
+    fullImg.src = src;
+    fullImg.style.maxWidth = '90%';
+    fullImg.style.maxHeight = '90%';
+    fullImg.style.borderRadius = '6px';
+    overlay.appendChild(fullImg);
+
+    document.body.appendChild(overlay);
+}
 });

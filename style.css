@@ -76,53 +76,43 @@ section .title::after{
 
 
 /* navbar styling */
-.navbar{
+.navbar {
     position: fixed;
     width: 100%;
     z-index: 999;
-    padding: 30px 0;
-    font-family: 'Ubuntu', sans-serif;
-    transition: all 0.3s ease;
-}
-.navbar.sticky{
-    padding: 15px 0;
-    background: darkturquoise;
-}
-.navbar .max-width{
+    padding: 20px 50px;
+    background: transparent; /* initially transparent */
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.navbar .logo a{
-    color: #fff;
-    font-size: 35px;
-    font-weight: 600;
-}
-.navbar .logo a span{
-    color: darkturquoise;
     transition: all 0.3s ease;
-}
-.navbar.sticky .logo a span{
-    color: #fff;
+    justify-content: center; /* center the menu container */
+    font-family: 'Ubuntu', sans-serif;
 }
 
-.navbar .menu li{
-    list-style: none;
-    display: inline-block;
+.navbar.sticky{
+    background: darkturquoise; /* appears after scrolling */
 }
-.navbar .menu li a{
-    display: block;
+
+/* menu items container */
+.navbar .menu {
+    display: flex;
+    justify-content: space-between; /* spread items across full width */
+    width: 100%;
+    max-width: 1200px; /* optional max width for large screens */
+    list-style: none;
+}
+
+/* each menu link */
+.navbar .menu li a {
     color: #fff;
     font-size: 18px;
     font-weight: 500;
-    margin-left: 140px;
+    white-space: nowrap; /* prevent wrapping */
+    padding: 0 15px;
     transition: color 0.3s ease;
 }
-.navbar .menu li a:hover{
-    color: darkturquoise;
-}
-.navbar.sticky .menu li a:hover{
-    color: rgb(0, 124, 126);
+
+.navbar .menu li a:hover {
+    color: turquoise;
 }
 
 /* menu btn styling (bottom-right) */
@@ -225,15 +215,13 @@ section .title::after{
     transform: scale(1.10);
     color: darkturquoise;
 }
+
 /* skills section styling */
-.skills {
-    margin-bottom: 25px;
-}
 .skills .max-width .title::after{
     content: "what I know";
 }
 .skills .max-width .bars{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .skills .max-width .info{
     display: flex;
@@ -322,7 +310,7 @@ section .title::after{
 }
 
 /* projects section styling */
-.projects{
+.projects, .demo-reel{
     color:#fff;
     background: linear-gradient(rgba(0, 0, 0, 255), rgba(0, 0, 0, 0)), url('images/background.jpg');
     height: max-content;
@@ -330,20 +318,15 @@ section .title::after{
     background-size: cover;
     background-attachment: fixed;
 }
-.projects .title::before, .works .title::before{
-    background: #fff;
-}
 .projects .title::after{
-    background: linear-gradient(rgba(0, 0, 0, 255), rgba(0, 0, 0, 0)), url('images/background.jpg');
-    background-size: 100%;
-    background-size: cover;
-    background-attachment: fixed;
-    content: "what I've done";
+    background-color: transparent;
+    content: "what I've done in software & game dev";
 }
 .projects-content{
     color: white;
     height: max-content;
     display: inline-block;
+    margin-top: 100px;
 }
 .projects .projects-content .card{
     width: 48%;
@@ -492,72 +475,25 @@ section .title::after{
     content: "when I'm bored";
 }
 
-.works .max-width .carousel #card1{
-    background: url('images/vivariums.gif');
-    background-size: 450px 375px;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.works .max-width .carousel #card3{
-    background: url('images/dog.gif');
-    background-size: 375px 375px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.works .max-width .carousel #card4{
-    background: url('images/bear.gif');
-    background-size: 375px 375px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.works .max-width .carousel #card5{
-    background: url('images/snacc.gif');
-    background-size: 375px 375px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.works .max-width .carousel #card6{
-    background: url('images/works2.gif');
-    background-size: 400px 350px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.works .max-width .carousel #card7{
-    background: url('images/works3.gif');
-    background-size: 375px 315px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.works .max-width .carousel .card{
-    border-radius: 6px;
-    padding: 25px 35px;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
-    height: 350px;
-    width: 100%;
-    margin: 0px 1%;
-    background-attachment: local;
-    object-fit: cover;
-    
-}
-.works .max-width .carousel {
+.works .carousel .card {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    height: 100%;
-    width: 100%;
+    align-items: center;
+    max-height: 375px;       /* maximum height */
+    overflow: hidden;
+    border-radius: 6px;
+    padding: 0;              /* optional */
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    background: #000;        /* fallback background color */
 }
+
+.works .carousel .card img {
+    max-height: 375px;
+    width: auto;             /* keep aspect ratio */
+    object-fit: contain;     /* contain within card without cropping */
+    display: block;
+}
+
 .works .carousel .card:hover .box{
     transform: scale(1.05);
 }
@@ -566,6 +502,35 @@ section .title::after{
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
+
+/* Lightbox overlay */
+.lightbox {
+  display: none;
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 6px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
 .owl-dots{
     text-align: center;
     margin-top: 20px;
@@ -647,6 +612,16 @@ footer span a:hover{
     text-decoration: underline;
 }
 
+.demo-reel-content {
+    margin-top: 100px;
+    margin-bottom: 100px; 
+}
+
+.demo-reel-content .title::after {
+    background-color: transparent;
+    content: "demo reel";
+}
+
 /* responsive media query start */
 @media (max-width: 1500px) {
     .projects .projects-content .card{
@@ -664,22 +639,12 @@ footer span a:hover{
 }
 
 @media (max-width: 1175px) {
-    .navbar .menu li a{
-        display: block;
-        font-size: 18px;
-        margin-left: 120px;
-    }
     .projects .projects-content .card{
         height: 33vw;
     }
 }
 
 @media (max-width: 1075px) {
-    .navbar .menu li a{
-        display: block;
-        font-size: 18px;
-        margin-left: 100px;
-    }
     .projects .projects-content .card{
         height: 36vw;
     }
@@ -689,45 +654,14 @@ footer span a:hover{
     .max-width{
         padding: 0 50px;
     }
-    .navbar .menu li a{
-        display: block;
-        font-size: 17px;
-        margin-left: 80px;
-    }
     .projects .projects-content .card{
         height: 39vw;
     }
 
 }
 @media (max-width: 947px){
-    .menu-btn{
-        display: block;
-        z-index: 999;
-    }
-    .menu-btn i.active:before{
-        content: "\f00d";
-    }
-    .navbar .menu{
-        position: fixed;
-        height: 100vh;
-        width: 100%;
-        left: -100%;
-        top: 0;
-        background: #111;
-        text-align: center;
-        padding-top: 80px;
-        transition: all 0.3s ease;
-    }
-    .navbar .menu.active{
-        left: 0;
-    }
-    .navbar .menu li{
-        display: block;
-    }
-    .navbar .menu li a{
-        display: block;
-        font-size: 17px;
-        margin-left: 80px;
+    .navbar .menu li a {
+        font-size: 14px;
     }
     .home .max-width .text-2{
         font-size: 70px;
@@ -772,11 +706,16 @@ footer span a:hover{
     .projects .projects-content .card{
         height: 65vw;
     }
-    .works {
-    }
 }
 
 @media (max-width: 500px) {
+    .navbar .menu li a {
+        font-size: 12px;
+    }
+    .navbar {
+        padding: 12px 0;
+
+    }
     .home .home-content .text-2{
         font-size: 50px;
     }
@@ -808,10 +747,6 @@ footer span a:hover{
     .projects .projects-content .card{
         height: 75vw;
         min-height: max-content;
-    }
-    .projects{
-    }
-    .works {
     }
 }
 
