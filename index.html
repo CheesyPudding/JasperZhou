@@ -30,7 +30,6 @@
     <nav class="navbar">
     <ul class="menu">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
         <li><a href="/dev/">Dev Projects</a></li>
         <li><a href="/demo-reel/">Animation</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -53,12 +52,7 @@
             <h2 class="title">About me</h2>
             <p style="margin-bottom: 20px;">Hello, my name is Jasper, and I am an apsiring technical software/game developer, as well as a creative animator, artist, and designer.        
                 Ever since taking programming courses in highschool and self-teaching Adobe Animate, I've continue to gain valuable experience in these 
-                various fields and mediums through industry experience, game jams, and personal projects.<br>
-            </p>
-            <p style="margin-bottom: 20px;"> 
-                Currently, I'm persuing my Bachelors in Computer Science with a specialization in game dev at the British Columbia Institute of Technology. 
-                I am also a 2022 Graduate at BCIT's Computer Systems Technology (CST) program.
-                I've also been formally taught 3D Character Animation using Maya at the Vancouver Institute of Media Arts (VanArts).
+                various fields and mediums through industry experience, classes, game jams, and personal projects.<br>
             </p>
             <p style="margin-bottom: 20px;">During my free-time, I do enjoy gaming, working out, working on coding projects, and animating whenever I can. You can find some examples of my 
                 projects and works on my Github and Youtube, or you can also find and contact me on Linkedin or by email if you have the time. 
@@ -83,23 +77,49 @@
                 <div class="card" data-full="images/env_render_2.webp"><img src="images/env_render_2.webp" alt="Env Render 2"></div>
                 <div class="card" data-full="images/archer.webp"><img src="images/archer.webp" alt="Archer"></div>
                 <div class="card" data-full="images/knight.webp"><img src="images/knight.webp" alt="Knight"></div>
-                <div class="card" data-full="images/vivariums.gif"><img src="images/vivariums.gif" alt="Vivariums"></div>
-                <div class="card" data-full="images/dog.gif">
-                <img src="images/dog.gif" alt="Dog">
+                <div class="card">
+                <video autoplay muted loop playsinline preload="none" class="card-video" data-full="images/frogger.webm">
+                    <source src="images/frogger.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
                 </div>
-                <div class="card" data-full="images/bear.gif">
-                <img src="images/bear.gif" alt="Bear">
+                <div class="card">
+                    <video autoplay muted loop playsinline preload="none" class="card-video" data-full="images/dog.webm">
+                        <source src="images/dog.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-                <div class="card" data-full="images/snacc.gif"><img src="images/snacc.gif" alt="Snacc"></div>
-                <div class="card" data-full="images/works2.gif"><img src="images/works2.gif" alt="Works 2"></div>
-                <div class="card" data-full="images/works3.gif"><img src="images/works3.gif" alt="Works 3"></div>
-                <!-- Add more cards here -->
+                <div class="card">
+                <video autoplay muted loop playsinline preload="none" class="card-video" data-full="images/bear.webm">
+                    <source src="images/bear.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                </div>
+                <div class="card">
+                <video autoplay muted loop playsinline preload="none" class="card-video" data-full="images/snacc.webm">
+                    <source src="images/snacc.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                </div>
+                <div class="card">
+                <video autoplay muted loop playsinline preload="none" class="card-video" data-full="images/works2.webm">
+                    <source src="images/works2.webm" type="video/webm" style="max-height: 50px; width: auto; margin: 0 auto; display: block;">>
+                    Your browser does not support the video tag.
+                </video>
+                </div>
+                <div class="card">
+                <video autoplay muted loop playsinline preload="none" class="card-video" data-full="images/works3.webm">
+                    <source src="images/works3.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                </div>
             </div>
         </div>
         <!-- Lightbox overlay -->
-        <div class="lightbox" id="lightbox">
-            <span class="close">&times;</span>
-            <img class="lightbox-img" src="">
+        <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" style="display:none;" />
+        <video id="lightbox-video" controls autoplay style="display:none;"></video>
         </div>
     </section>
 

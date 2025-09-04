@@ -35,7 +35,7 @@ $(document).ready(function(){
 
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["Software Dev", "Game Dev", "3D Animator", "Designer", "2D Animator", "Student", "Gamer", "Human-Being"],
+        strings: ["Software Dev", "Game Dev", "3D Animator", "Designer", "2D Animator", "Student"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
@@ -45,7 +45,7 @@ $(document).ready(function(){
     $('.carousel').owlCarousel({
         margin: 20,
         loop: true,
-        autoplayTimeout: 10000,
+        autoplayTimeout: 6000,
         autoplayHoverPause: true,
         responsive: {
             0:{
@@ -71,8 +71,8 @@ $(document).ready(function(){
     menuBtn.classList.toggle('active');
     });
 
-    // Lightbox functionality
-    // Select all card images
+// Lightbox functionality
+// Select all card images
 const cards = document.querySelectorAll('.card img');
 
 cards.forEach(img => {
@@ -87,7 +87,7 @@ cards.forEach(img => {
     });
 
     img.addEventListener('mousemove', e => {
-        if(Math.abs(e.clientX - startX) > 5 || Math.abs(e.clientY - startY) > 5){
+        if(Math.abs(e.clientX - startX) > 10 || Math.abs(e.clientY - startY) > 10){
             isDragging = true;
         }
     });
@@ -119,31 +119,47 @@ cards.forEach(img => {
         }
     });
 });
+});
 
-// Lightbox function example
-function openLightbox(src){
-    // Create overlay
-    const overlay = document.createElement('div');
-    overlay.style.position = 'fixed';
-    overlay.style.top = 0;
-    overlay.style.left = 0;
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.background = 'rgba(0,0,0,0.8)';
-    overlay.style.display = 'flex';
-    overlay.style.alignItems = 'center';
-    overlay.style.justifyContent = 'center';
-    overlay.style.zIndex = 10000;
-    overlay.addEventListener('click', () => overlay.remove());
+// lightbox
+document.addEventListener("DOMContentLoaded", function () {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxVideo = document.getElementById("lightbox-video");
+  const closeBtn = document.querySelector(".lightbox .close");
 
-    // Create image
-    const fullImg = document.createElement('img');
-    fullImg.src = src;
-    fullImg.style.maxWidth = '90%';
-    fullImg.style.maxHeight = '90%';
-    fullImg.style.borderRadius = '6px';
-    overlay.appendChild(fullImg);
+  // Click handler for cards
+  document.querySelectorAll(".card img, .card video").forEach(el => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      const src = el.dataset.full || el.src || el.querySelector("source")?.src;
+      if (!src) return;
 
-    document.body.appendChild(overlay);
-}
+      lightbox.style.display = "flex";
+
+      if (el.tagName === "IMG") {
+        lightboxImg.style.display = "block";
+        lightboxVideo.style.display = "none";
+        lightboxImg.src = src;
+      } else { // webm
+        lightboxImg.style.display = "none";
+        lightboxVideo.style.display = "block";
+        lightboxVideo.src = src;
+        lightboxVideo.play();
+      }
+    });
+  });
+
+  // Close actions
+  closeBtn.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  function closeLightbox() {
+    lightbox.style.display = "none";
+    lightboxImg.src = "";
+    lightboxVideo.pause();
+    lightboxVideo.src = "";
+  }
 });
